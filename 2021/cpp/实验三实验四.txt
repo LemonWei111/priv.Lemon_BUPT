@@ -1,0 +1,66 @@
+实验三：
+#include<iostream>
+using namespace std;
+class Triangle {
+private:int a, b, c;
+public:void set(int, int, int);
+	  void deal(int a, int b, int c) {
+		  if (a == b == c)cout << "等边三角形";
+		  else if (a == b || b == c || a == c)cout << "等腰三角形";
+		  else if (a * a + b * b == c * c || (b * b + c * c) == a * a || (a * a + c * c) == b * b)cout << "直角三角形";
+		  else if (a + b > c && a + c > b && b + c > a)cout << "三角形";
+		  else cout << "不是三角形";
+
+	  }
+
+};
+void Triangle::set(int A, int B, int C) {
+	a = A;
+	b = B;
+	c = C;
+}
+void main() {
+	int a, b, c;
+	cout << "构造一个三角形，请输入三边长" << endl;
+	cin >> a >> b >> c;
+	Triangle A;
+	A.set(a, b, c);
+	A.deal(a, b, c);
+}
+
+实验四：
+#include<iostream>
+using namespace std;
+class Employee {
+private:int id,money,byear,bmonth;
+	  string name;
+public:void set(int, const char*, int, int, int);
+	  void pmoney(int eyear, int emonth) {
+		  int m = eyear - byear;
+		  int n = emonth - bmonth;
+		  int hollmoney = money * (m * 12 + n);
+		  cout << name << " " << hollmoney << endl;
+	  }
+};
+void Employee::set(int a, const char* b, int c, int d, int e) {
+	id = a;
+	name = b;
+	money = c;
+	byear = d;
+	bmonth = e;
+}
+void main() {
+Employee e[5];
+e[0].set(1, "wang", 5000, 2000, 10);
+e[1].set(2, "liu", 4500, 2008, 1);
+e[2].set(3, "huo", 3800, 2003, 7);
+e[3].set(4, "ma", 5300, 2015, 4);
+e[4].set(5, "meng", 6000, 2021, 10);
+cout << "输入你要查询工号"<<endl;
+int i;
+cin >> i;
+cout << "输入当前年份，当前月份" << endl;
+int a, b;
+cin >> a >> b;
+e[i-1].pmoney(a,b);
+}
