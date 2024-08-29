@@ -1,0 +1,8 @@
+--cv1-3513-weijing.pdf       //算法说明文档
+--detect_circle_via_cv2.py    //调用cv2的硬币检测代码
+--edge_detection.py           //边缘检测核心代码实现
+--hough.py                         //霍夫圆变换核心代码实现
+--README.txt                     //文件结构说明文档
+--test.jpg                            //用到的测试图像（非硬币、高噪声）
+--test2.jpg                          //用到的测试图像（单硬币）
+--test3.jpg                          //用到的测试图像（多硬币）
